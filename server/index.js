@@ -4,10 +4,13 @@ import mongoose, { mongo } from "mongoose"
 import cors from "cors"
 import postRoute from "./routes/posts.js"
 const app = express()
-app.use('/posts', postRoute)
+
+
+app.use(cors())
 app.use(bodyParser.json({ extended: true }))
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
+
+app.use('/posts', postRoute)
 
 const MONGO_URL = "mongodb+srv://moments:moments@cluster0.ewufqkr.mongodb.net/?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 5000;
