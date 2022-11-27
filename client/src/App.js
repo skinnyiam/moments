@@ -12,7 +12,7 @@ function App() {
   },[dispatch])
   return (
     <div className="App">
-      <h1 className="text-4xl text-blue-600">hii</h1>
+      {/* <h1 className="text-4xl text-blue-600">hii</h1> */}
       <Posts />
       <Form />
 
