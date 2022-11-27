@@ -6,7 +6,7 @@ const postSchema = mongoose.Schema({
     createdBy: String,
     tags: [String],
     //we will convert it into base64 string
-    image: String,
+    selectedFile: String,
     like: {
         type: Number,
         default: 0
