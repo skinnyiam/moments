@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const postSchema = mongoose.Schema({
     title: String,
     message: String,
-    createdBy: String,
+    creator: String,
     tags: [String],
     //we will convert it into base64 string
     selectedFile: String,
