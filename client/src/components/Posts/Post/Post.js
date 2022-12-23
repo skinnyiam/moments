@@ -33,7 +33,7 @@ const Post = ({ post, setCurrentId }) => {
             {post.creator}
           </h5>
 
-          <p class="mb-1 font-normal text-gray-700 dark:text-gray-400">
+          <p class="mb-1 font-normal flex justify-start text-gray-700 dark:text-gray-400">
             {post.tags.map((tag) => {
               return <p>{`#${tag}`}</p>;
             })}
