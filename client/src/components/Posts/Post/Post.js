@@ -4,14 +4,14 @@ import FcLike from "../../icons/like";
 import Delete from "../../icons/delete";
 import Dots from "../../icons/dots";
 import { Tooltip } from "@chakra-ui/react";
-import {useDispatch} from "react-redux"
-import { deletePost,likePost } from "../../../actions/post";
+import { useDispatch } from "react-redux";
+import { deletePost, likePost } from "../../../actions/post";
 const Post = ({ post, setCurrentId }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <div className="bg-pink-100   mt-6 rounded-xl ml-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-25">
       <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-        <img class="rounded-t-lg w-full h-64" src={post.selectedFile} alt="" />
+        <img class="rounded-t-lg object-cover" src={post.selectedFile} alt="" />
 
         <div className="flex justify-between">
           <p class=" p-2 text-sm font-normal text-gray-700 dark:text-gray-400">
@@ -41,13 +41,22 @@ const Post = ({ post, setCurrentId }) => {
         </div>
         <div className="flex mb-4 justify-between w-full">
           {/* <Tooltip label="Like!" placement="top" aria-label="A tooltip"> */}
-          <button onClick={() => {dispatch(likePost(post._id ))}} className="pl-2 text-white flex justify-center items-center text-xl">
-            <FcLike /> {<span className="ml-2">{post.like}</span> }
-         
+          <button
+            onClick={() => {
+              dispatch(likePost(post._id));
+            }}
+            className="pl-2 text-white flex justify-center items-center text-xl"
+          >
+            <FcLike /> {<span className="ml-2">{post.like}</span>}
           </button>
           {/* </Tooltip> */}
-         
-          <button onClick={() => {dispatch(deletePost(post._id))}} className="text-white pr-2 text-xl">
+
+          <button
+            onClick={() => {
+              dispatch(deletePost(post._id));
+            }}
+            className="text-white pr-2 text-xl"
+          >
             <Delete />
           </button>
         </div>
